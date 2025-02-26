@@ -27,20 +27,15 @@ class SignInScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  //E-mail
                   const CustomTextField(
                     icon: Icons.email,
                     label: 'E-mail',
                   ),
-
-                  //Senha
                   const CustomTextField(
                     icon: Icons.lock,
                     label: 'Senha',
                     isSecret: true,
                   ),
-
-                  //Botão
                   SizedBox(
                     height: 50,
                     child: ElevatedButton(
@@ -53,8 +48,19 @@ class SignInScreen extends StatelessWidget {
                       child: const Text(
                         'Entrar',
                         style: TextStyle(
-                          color: Colors.white,
-                          height: 18,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'Esqueceu a senha?',
+                        style: TextStyle(
+                          color: Colors.red,
                         ),
                       ),
                     ),
