@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:greengrocer_project_older_flutter_version/src/auth/components/custom_text_field.dart';
+import 'package:greengrocer_project_older_flutter_version/src/config/custom_colors.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({Key? key}) : super(key: key);
@@ -7,14 +8,81 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.green,
       body: Column(
         children: [
           Expanded(
-            child: Container(
-              color: Colors.green,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                //Nome app
+                Text.rich(
+                  TextSpan(
+                    style: const TextStyle(
+                      fontSize: 40,
+                    ),
+                    children: [
+                      const TextSpan(
+                        text: 'Green',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'grocer',
+                        style: TextStyle(
+                          color: CustomColors.customContrastColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                //Subtítulo
+                Text.rich(
+                  TextSpan(
+                    style: TextStyle(
+                      fontSize: 40,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'Alimentos naturais',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                //Categorias "Laking animated_text_kit implementation"
+                /*SizedBox(
+                  height: 30,
+                  child: DefaultTextStyle(
+                    style: const TextStyle(
+                      fontSize: 25,
+                    ),
+                    child: AnimatedTextKit(
+                      pause: Duration.zero,
+                      repeatForever: true,
+                      animatedTexts: [
+                        FadeAnimatedText('Frutas'),
+                        FadeAnimatedText('Verduras'),
+                        FadeAnimatedText('Legumes'),
+                        FadeAnimatedText('Carnes'),
+                        FadeAnimatedText('Cereais'),
+                        FadeAnimatedText('Laticíneos'),
+                      ],
+                    ),
+                  ),
+                ),*/
+              ],
             ),
           ),
+
+          //Formulário
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
             decoration: const BoxDecoration(
@@ -37,7 +105,7 @@ class SignInScreen extends StatelessWidget {
                   label: 'Senha',
                   isSecret: true,
                 ),
-                //Botão Entrar
+                //Botão: Entrar
                 SizedBox(
                   height: 50,
                   child: ElevatedButton(
@@ -60,10 +128,10 @@ class SignInScreen extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {},
-                    child: const Text(
+                    child: Text(
                       'Esqueceu a senha?',
                       style: TextStyle(
-                        color: Colors.red,
+                        color: CustomColors.customContrastColor,
                       ),
                     ),
                   ),
@@ -97,7 +165,7 @@ class SignInScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                //Botão Criar Nova Conta
+                //Botão: Criar Conta
                 SizedBox(
                   height: 50,
                   child: OutlinedButton(
